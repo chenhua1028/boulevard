@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="ServiceUtil" class="com.jsits.commons.util.ServiceUtil" lazy-init="false"/>
+
+	<bean id="ServiceParserManager" class="com.service.parser.ServiceParserManager" init-method="init" lazy-init="false">
+
+		<property name="charset" value="utf-8" /><!-- "utf-8"/"GBK" -->
+
+		<property name="parserMap">
+			<map>
+				<entry key="json">
+					<bean class="com.service.parser.JsonServiceParser">
+					</bean>
+				</entry>
+				<entry key="xml">
+					<bean class="com.service.parser.XmlServiceParser">
+					</bean>
+				</entry>
+				<entry key="upload">
+					<bean class="com.service.parser.UploadServiceParser">
+					</bean>
+				</entry>
+				
+			</map>
+		</property>
+
+	</bean>
+
+	<bean id="SessionService" class="com.service.SessionService">
+		<!-- <property name="helloWorld"> <value>Hello,Welcome To SessionService!</value> </property> <property name="level"> <value>1</value> 
+			</property> -->
+	</bean>
+
+
+</beans>
