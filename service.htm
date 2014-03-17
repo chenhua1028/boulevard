@@ -37,12 +37,12 @@
 		$(function() {
 			$.get("json/services", function(data) {
 
-				$("#txtHint").html($.parseJSON(data).desp);
+				$("#txtHint").html($.parseJSON(data).msg);
 				$(".left a").click(function() {
 					var url = $(this).attr("data-url");
 					$.get(url, function(data) {
 
-						$("#content").html($.parseJSON(data).desp);
+						$("#content").html($.parseJSON(data).msg);
 
 					})
 				})

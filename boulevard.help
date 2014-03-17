@@ -1,0 +1,9 @@
+1、建一个web项目，如bld.service.test
+2、将bld.service.test的web.xml的ServiceServlet配置项copy至新web项目的web.xml
+3、将service.htm和js文件夹copy到web项目的根目录
+4、将log4j.properties文件copy到web项目的src根目录
+5、将src下的spring文件夹copy到新web项目的src目录
+6、将boulevard.jar放入新web项目的WEB-INF/lib下
+7、运行web工程
+8、浏览器打开http://127.0.0.1:8080/boulevard/service.htm
+	注：端口号和工程名自行更换
