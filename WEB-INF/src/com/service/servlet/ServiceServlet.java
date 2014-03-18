@@ -39,8 +39,10 @@ public class ServiceServlet extends HttpServlet
 		super.init(config);
 		checkServerConfig();
 
-		System.out.println("Deploy WebApp:" + config.getServletContext().getContextPath() + "\n    Exported " + ServiceUtil.getService(HttpServiceManager.class).getHttpServices().size()
-				+ " webservices... ");
+		String contextPath = config.getServletContext().getContextPath();
+		contextPath = StringUtils.isNotBlank(contextPath) ? contextPath : "/";
+
+		System.out.println("Deploy WebApp:" + contextPath + "\n    Exported " + ServiceUtil.getService(HttpServiceManager.class).getHttpServices().size() + " webservices... ");
 
 	}
 
